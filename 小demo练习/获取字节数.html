@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input id="Text1" type="text" onblur="Checkval()" />
+
+    <script type="text/javascript">
+        function Checkval()
+        {
+          var s=document.getElementById("Text1").value;
+          var n=0;
+          for(var i=0;i<s.length;i++)
+          {
+          //charCodeAt()可以返回指定位置的unicode编码,这个返回值是0-65535之间的整数
+            if(s.charCodeAt(i)<128)
+            {
+             n++;
+            }
+            else
+            {
+             n+=2;
+            }
+          }
+          alert(n);
+        }
+    </script>
+</body>
+</html>

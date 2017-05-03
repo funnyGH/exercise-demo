@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div>水电费</div>
+    <span>是 的</span>
+    <p>ssd</p>
+    <div class="div"></div>
+
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script> 
+        function a(){
+            alert(1)
+        }
+
+        function b(a){
+            var html = "";
+            html += '<div><button onclick="a()" class="btn" style="width:60px;height:30px">点击</button>';
+            html +=  '<span></span></div>';
+            $(".div").html(html)
+        }
+        b();
+
+
+    </script>
+
+    <script>
+        // alert($("div").html().length)        //3
+        // alert($("span").html().length)      //2
+        // alert($("p").html().length)         //3
+    </script>
+
+    <script>
+        var account = 100;
+        var p = new Promise(function(resolve, reject) {
+            if (account >= 500) {
+                resolve(500);
+            } else {
+                reject(new Error('no money'));
+            }
+        });
+        p.then(function(value) {
+            alert(value + ', good boy!');
+        }, function(error) { 
+            alert(error);
+        });
+    </script>
+
+<!--首先要理解…Promise是一个对象，有then()方法的对象
+    then()的入参是一个函数，通常在promise链中，入参是 一个返回promise的函数 ，这句话好像有点拗口，就是说入参是一个函数，
+    这个函数会return一个promise对象-->
+    <script>
+        p1().then(p2).then(p3)
+            .then(function(data) {
+                console.log('data: ' + data);
+            })
+            .catch(function(error) {
+                console.log('error: ' + error);
+            });
+
+        function p1() {
+            return new Promise(function(resolve, reject) {
+                console.log('p1 resolved');
+                // reject(112233);
+                resolve(123);
+            });
+        }
+
+        function p2() {
+            return new Promise(function(resolve, reject) {
+                console.log('p2 rejected');
+                reject(456);
+            });
+        }
+
+        function p3() {
+            return new Promise(function(resolve, reject) {
+                console.log('p3 resolved');
+                resolve(789);
+            });
+        }
+    </script>
+</body>
+</html>

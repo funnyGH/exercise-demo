@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>demo</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input type="text" style="width:100px;height:40px;">
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		$("input:text").bind("input propertychange",function(){ 
+		    console.log($(this).val().length);//打印输入框字符长度
+	    });
+
+	</script>
+</body>
+</html>

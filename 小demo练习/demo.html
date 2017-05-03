@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body> 
+    <div>
+        <p>是的</p>
+        <div class="div"></div>
+        <div class="div1"></div>
+
+        <input type="text" placeholder="请输入" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+    </div>
+
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        var a = $("<a/>"); 
+        a.html("hello")
+        $(".div").append(a) 
+
+
+        var i = $("<a>helloword</a>");  
+        $(".div1").append(i)
+
+
+
+    </script> 
+</body>
+</html>

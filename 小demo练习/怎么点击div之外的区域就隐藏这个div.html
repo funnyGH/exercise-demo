@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>页</title>
+    <style type="text/css">
+        * { padding:0; margin:0; }
+        body{ position:relative; }
+        #pop { display:none; position:absolute; left:10px; top:30px; width:120px; height:120px; border:2px solid #ccc; background:#eee; }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var obj=document.getElementById("pop");  //弹出的内容框
+            var oBtn=document.getElementById("click");  //input框
+
+            oBtn.onclick=function(){
+                obj.style.display="block";
+            }
+            document.onclick=function(event){
+                var e=event || window.event;//兼容ie和非ie的event
+                var aim=e.srcElement || e.target; //兼容ie和非ie的事件源
+                //
+                if(e.srcElement){
+                    var aim=e.srcElement;
+                    if(aim!=oBtn && aim!=obj){
+                        obj.style.display="none";
+                    }
+                }else{
+                    var aim=e.target;
+                    if(aim!=oBtn && aim!=obj){
+                        obj.style.display="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input id="click" placeholder="点击弹出" />
+    <div id="pop">
+        弹出层内容呢
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

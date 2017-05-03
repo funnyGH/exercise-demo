@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div>
+        <input id="Text1" type="text" />
+        <button id="btn_1">点击</button>
+        <p style="width:300px;height:100px;border:1px solid #ccc;" id="bbb">的说法是飞机路口附近的身份</p>
+    </div>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script>
+    $(function() {
+        $("#btn_1").click(function() {
+            var $keyword = $("#Text1").val();
+            changeCorKeyWord("bbb", $keyword, 'red', true);
+        });
+    });
+    function changeCorKeyWord(id, keyword, color, boolen) {
+        if (keyword == ""){
+            return;
+        }
+        var tempHTML = $("#" + id).html();
+        var htmlReg = new RegExp("\<.*?\>", "i");
+        var arrA = new Array();
+        for (var i = 0; true; i++) {
+            var m = htmlReg.exec(tempHTML);
+            if (m) {
+                arrA[i] = m;
+            }
+            else {
+                break;
+            }
+            tempHTML = tempHTML.replace(m, "[[[[" + i + "]]]]");
+        }
+        var replaceText;
+        if (boolen){
+            replaceText = '<font style="color:' + color + ';">'+keyword+'</font>';
+        }else{
+            replaceText = '<font style="color:' + color + ';">'+keyword+'</font>';
+        }
+        var arrayWord = keyword.split(",");
+        for (var w = 0; w < arrayWord.length; w++) {
+            var r = new RegExp("(" + arrayWord[w].replace(/[(){}.+*?^$|\\\[\]]/g, "\\$&") + ")", "ig");
+            tempHTML = tempHTML.replace(r, replaceText);
+        }
+        for (var i = 0; i < arrA.length; i++) {
+            tempHTML = tempHTML.replace("[[[[" + i + "]]]]", arrA[i]);
+        }
+        $("#" + id).html(tempHTML);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .point-area {
+            text-align: center;
+            position: relative;
+            width: 150px;
+            height: 150px;
+            -webkit-transition: opacity .5s ease-out;
+            transition: opacity .5s ease-out;
+        }
+        .point-area .point-70 {
+            width: 100%;
+            height: 100%;
+        }
+        .point-area .point-70:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+            border: 2px solid #00cdec;
+            opacity: 0;
+            -webkit-animation: ripple 4.5s ease-out 1575ms infinite;
+            animation: ripple 4.5s ease-out 1575ms infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="y-row y-clear" style="position: relative;">
+      <div class="main-img" id="serve-img-area" style="position: relative;">
+        <img src="//img.alicdn.com/tps/TB1dRVKLXXXXXbBXpXXXXXXXXXX-1127-508.png" data-ie8img="https://img.alicdn.com/tps/TB1KQL5LXXXXXbjXFXXXXXXXXXX-1222-558.png">
+      <div class="point-area" style="top: 165px; left: 900px; position: absolute; width: 80px; height: 80px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 30px; left: 50px;">华东</p><a class="point point-dot"></a><div class="point point-10"></div><div class="point point-70"></div></div><div class="point-area" style="top: 140px; left: 860px; position: absolute; width: 110px; height: 110px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 45px; left: 15px;">华北</p><a class="point point-dot"></a><div class="point point-10"></div><div class="point point-40"></div><div class="point point-shadow point-80"></div></div><div class="point-area" style="top: 140px; left: 973px; position: absolute; width: 80px; height: 80px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 30px; left: 50px;">日本</p><a href="https://www.aliyun.com/chinaglobal/home?tabId=8#guid-633594" target="_blank" class="point point-dot"></a><div class="point point-10"></div><div class="point point-70"></div></div><div class="point-area" style="top: 140px; left: 220px; position: absolute; width: 100px; height: 100px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 40px; left: 60px;">美东</p><a href="https://www.aliyun.com/chinaglobal/home?tabId=5#guid-633594" target="_blank" class="point point-dot"></a><div class="point point-10"></div><div class="point point-40"></div><div class="point point-shadow point-80"></div></div><div class="point-area" style="top: 275px; left: 878px; position: absolute; width: 110px; height: 110px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 45px; left: 65px;">新加坡</p><a href="https://www.aliyun.com/chinaglobal/home?tabId=3#guid-633594" target="_blank" class="point point-dot"></a><div class="point point-10"></div><div class="point point-40"></div><div class="point point-shadow point-80"></div></div><div class="point-area" style="top: 125px; left: 820px; position: absolute; width: 200px; height: 200px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 90px; left: 60px;">华南</p><a class="point point-dot"></a><div class="point point-10"></div><div class="point point-40"></div><div class="point point-shadow point-80"></div></div><div class="point-area" style="top: 195px; left: 900px; position: absolute; width: 80px; height: 80px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 30px; left: 50px;">香港</p><a href="https://www.aliyun.com/chinaglobal/home?tabId=1#guid-633594" target="_blank" class="point point-dot"></a><div class="point point-10"></div><div class="point point-70"></div></div><div class="point-area" style="top: 158px; left: 661px; position: absolute; width: 110px; height: 110px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 45px; left: 65px;">中东</p><a href="https://www.aliyun.com/chinaglobal/home?tabId=7#guid-633594" target="_blank" class="point point-dot"></a><div class="point point-10"></div><div class="point point-40"></div><div class="point point-shadow point-80"></div></div><div class="point-area" style="top: 85px; left: 542px; position: absolute; width: 80px; height: 80px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 30px; left: 50px;">欧洲</p><a href="https://www.aliyun.com/chinaglobal/home?tabId=4#guid-633594" target="_blank" class="point point-dot"></a><div class="point point-10"></div><div class="point point-70"></div></div><div class="point-area" style="top: 120px; left: 140px; position: absolute; width: 80px; height: 80px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 30px; left: 50px;">美西</p><a href="https://www.aliyun.com/chinaglobal/home?tabId=2#guid-633594" target="_blank" class="point point-dot"></a><div class="point point-10"></div><div class="point point-70"></div></div><div class="point-area" style="top: 355px; left: 958px; position: absolute; width: 150px; height: 150px; visibility: visible; opacity: 1;"><p class="point-name" style="position: absolute; top: 65px; left: 85px;">澳大利亚</p><a href="https://www.aliyun.com/chinaglobal/home?tabId=6#guid-633594" target="_blank" class="point point-dot"></a><div class="point point-10"></div><div class="point point-40"></div><div class="point point-shadow point-80"></div></div></div>
+      <div class="main-bar">
+        
+        <a href="https://help.aliyun.com/knowledge_list/9091867.html" target="_blank" class="main-bar-list">
+          <img src="https://img.alicdn.com/tps/TB17fLGLXXXXXazXpXXXXXXXXXX-116-116.png">
+          <p>全球首张云安全国际认证</p>
+        </a>
+        
+        <a href="https://help.aliyun.com/knowledge_list/9091864.html" target="_blank" class="main-bar-list">
+          <img src="https://img.alicdn.com/tps/TB1aaDCLXXXXXXwXFXXXXXXXXXX-116-116.png">
+          <p>信息安全管理体系国际认证</p>
+        </a>
+        
+        <a href="https://help.aliyun.com/knowledge_list/9091866.html" target="_blank" class="main-bar-list">
+          <img src="https://img.alicdn.com/tps/TB1vDvLLXXXXXbrXXXXXXXXXXXX-116-116.png">
+          <p>通过公安部等级保护评测</p>
+        </a>
+        
+        <a href="https://help.aliyun.com/knowledge_list/9091865.html" target="_blank" class="main-bar-list">
+          <img src="https://img.alicdn.com/tps/TB1UNzkLXXXXXa1aXXXXXXXXXXX-116-116.png">
+          <p>首批可信云服务认证</p>
+        </a>
+        
+      </div>
+    </div>
+</body>
+</html>

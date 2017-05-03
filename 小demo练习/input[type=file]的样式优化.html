@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>定义input type="file" 的样式</title>
+    <style type="text/css">
+        body{ font-size:14px;}
+        /*input{ vertical-align:middle; margin:0; padding:0}*/
+        /*.file-box{ position:relative;width:340px}*/
+        /*.txt{ height:22px; border:1px solid #cdcdcd; width:180px;}*/
+        /*.btn{ background-color:#FFF; border:1px solid #CDCDCD;height:24px; width:70px;}*/
+        /*.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }*/
+
+
+        .file-box{
+            position:relative;
+            width: calc(100% - 170px);
+            float: left;
+            padding: 9px 0px 0px 0px;
+            margin-left:30px;
+            overflow:hidden;
+        }
+        .file-box input{float:left;}
+        .yl_txt{
+            width: 340px;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 34px;
+            border: 1px solid #ccc;
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+            border-left: none;
+            outline:none;
+        }
+        .yl_btn{
+            width:80px;
+            height:34px;
+            line-height:32px;
+            text-align:center;
+            background-color:#f5f5f5;
+            border:1px solid #ccc;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+            border-right:none;
+        }
+        .yl_file{
+            width:141px;
+            height:30px;
+            position:absolute;
+            top:11px;
+            left:-63px;
+            filter:alpha(opacity:0);
+            opacity: 0;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<!----------------------方法一  ------------------------->
+<!--<div class="file-box">-->
+    <!--<form action="" method="post" enctype="multipart/form-data">-->
+        <!--<input type='text' name='textfield' id='textfield' class='txt' />-->
+        <!--<input type='button' class='btn' value='浏览...' />-->
+        <!--<input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />-->
+        <!--<input type="submit" name="submit" class="btn" value="上传" />-->
+    <!--</form>-->
+<!--</div>-->
+
+<!----------------------方法二  ------------------------->
+<div class="file-box">
+    <form id="messageForm">
+        <input type='button' class='yl_btn' value='选择文件' />
+        <input type='text' name='textfield' id='textfield' class='yl_txt' readonly />
+        <input type="file" name="fileField" class="yl_file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
+    </form>
+</div>
+</body>
+</html>

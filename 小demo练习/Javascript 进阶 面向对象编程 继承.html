@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>面向对象封装 继承 多态</title>
+	<style type="text/css">
+		body{
+			font-size: 14px;
+		}
+		ul,li{
+			list-style: none;
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li id="a">张三：</li>
+		<li id="b">李四：</li>
+		<li id="c">王五：</li>
+	</ul>
+
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/PlaceholderEditor.js"></script>
+	<script type="text/javascript">
+		 
+        $(function () {   
+            $("ul li").each(function () {  
+                new placeholderEditor($(this).attr("id"), "请输出成绩...", $(this));  
+            });   
+        });  
+   
+	</script>
+</body>
+</html>
