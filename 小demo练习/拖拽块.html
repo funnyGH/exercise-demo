@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+    <style>
+        .loopShow_img{
+            width: 100%;
+            height:400px;
+            border:1px solid #ddd;
+        }
+        .loopShow_imgBg{
+            width: 980px;
+            height:100%;
+            margin: 0 auto;
+            background: #fefefe;
+            position: relative;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+ </head>
+ <body>
+	 <div class="loopShow_img clearfix" >
+        <div class="loopShow_imgBg">
+            <div id="box">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>编码</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<script>
+    /*--------------------------------------------
+     *
+     *  拖拽块功能
+     *  yu.liu
+     *  2017-06-08
+     * */
+    window.onload = function (){
+        var drag = new Drag('box');
+        drag.init();
+    };
+    // 构造函数Drag
+    function Drag(id){
+        this.obj = document.getElementById(id);
+        this.disX = 0;
+        this.disY = 0;
+    }
+    Drag.prototype.init = function (){
+        // this指针
+        var me = this;
+        this.obj.onmousedown = function (e){
+            var e = e || event;
+            me.mouseDown(e);
+            // 阻止默认事件
+            return false;
+        };
+    };
+    Drag.prototype.mouseDown = function (e){
+        // this指针
+        var me = this;
+        this.disX = e.clientX - this.obj.offsetLeft;
+        this.disY = e.clientY - this.obj.offsetTop;
+        document.onmousemove = function (e){
+            var e = e || window.event;
+            me.mouseMove(e);
+        };
+        document.onmouseup = function (){
+            me.mouseUp();
+        }
+    };
+    Drag.prototype.mouseMove = function (e){
+        this.obj.style.left = (e.clientX - this.disX) + 'px';
+        this.obj.style.top = (e.clientY - this.disY) + 'px';
+        var owid = (this.obj.parentElement.parentElement.offsetWidth - this.obj.parentElement.offsetWidth)/2;
+        var ohei = (this.obj.parentElement.parentElement.offsetHeight - this.obj.parentElement.offsetHeight)/2;
+        var minLeft = owid * (-1);
+        var minTop = ohei * (-1);
+        var maxLeft = this.obj.parentElement.parentElement.offsetWidth - this.obj.offsetWidth - owid;
+        var maxTop = this.obj.parentElement.parentElement.offsetHeight - this.obj.offsetHeight - ohei;
+        if(this.obj.offsetLeft <= minLeft){
+            this.obj.style.left = minLeft + 'px';
+        }else if(this.obj.offsetLeft >= maxLeft){
+            this.obj.style.left = maxLeft + 'px';
+        };
+        if(this.obj.offsetTop <= minTop){
+            this.obj.style.top = minTop + 'px';
+        }else if(this.obj.offsetTop >= maxTop){
+            this.obj.style.top = maxTop + 'px';
+        };
+    };
+    Drag.prototype.mouseUp = function (){
+        document.onmousemove = null;
+        document.onmouseup = null;
+    };
+</script>
+
+
+
+
+ </body>
+</html>
