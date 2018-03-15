@@ -1,7 +1,7 @@
 href="test.html?id=1"
 
 //返回url参数对象
-function zs_getUrlParamObj() {
+function getUrlParamObj() {
 var name,value,str,num,arr;
 var retObj = {};
 str = location.href.substr(location.href.indexOf("?")+1);
@@ -20,5 +20,5 @@ retObj[name] = value;
 
 //页面上接收
 var paramObj;
-paramObj = zs_getUrlParamObj();
+paramObj = getUrlParamObj();
 paramObj.Id,
